@@ -1,0 +1,128 @@
+1.5.1 (2014-05-03)
+
+- Cleanup.
+- Put the sources to GitHub (https://github.com/s3rvac/AutoFenc).
+
+1.5 (2012-03-17)
+
+Thanks to Ingo Karkat for the updates in this version.
+- Supported HTML/XML/CSS file types have been made configurable and added more
+  defaults.
+- Do not emit the "unrecognized charset" message when the encoding is known.
+
+1.4 (2012-03-11)
+
+Thanks to Ingo Karkat for the updates in this version.
+- Improved the detection regexp for comments:
+	- added "fileencoding" and "charset";
+	- demands that there is a whitespace in front of the keyword, so that
+	"daycoding" doesn't match;
+	- g:autofenc_autodetect_commentexpr allows to configure the pattern
+	for comment detection.
+- Introduced g:autofenc_enc_blacklist to disable some encodings. For
+  example, the enca tool has a tendency to detect plain text files as UTF-7.
+  With the blacklist, AutoFenc can be instructed to ignore those encodings.
+- The check for ASCII is set to be case-insensitive because enca reports
+  this in uppercase, so the condition fails unless ignorecase is set.
+- Keeps changed CWD with 'autochdir' setting by temporarily disabling it. For
+  example, suppose that a user has ":lcd .." in after/ftplugin/gitcommit.vim
+  and that he is in the Git root directory, not the .git subdir when composing
+  a commit message. The reload of the buffer by AutoFenc (via :edit) again
+  triggered the automatic change of the working dir, and therefore the
+  customization was lost. The 'autochdir' setting needs to be temporarily
+  disabled to avoid that.
+- Added a support for plain Vim 7.0 in the shellescape() emulation from
+  version 1.3.4. Otherwise, there were errors in Vim 7.0.
+
+1.3.4 (2012-02-27)
+
+- Don't override when the user explicitly sets file encoding with ++enc (thanks
+  to Benjamin Fritz).
+- Fixed TOhtml version detection (again) and made sure line continuations can
+  actually be used (thanks to Benjamin Fritz and Ingo Karkat).
+- Disabled the option shellslash on Windows before calling shellescape() (it
+  may cause problems on Windows, thanks for the tip goes to Benjamin Fritz).
+
+1.3.3 (2011-11-29)
+
+Thanks to Ingo Karkat for the updates in this version.
+- Fixed a problem in the TOhtml detection when, for example,
+  g:loaded_2html_plugin = 'vim7.3_v6'.
+- The return code of the call of an external program via system(ext_prog_cmd)
+  is now checked. This prevents Vim interpreting an error message as an
+  encoding.
+- shellescape() is now used instead of quoting file_path manually.
+
+1.3.2 (2011-11-24)
+
+Thanks to Benjamin Fritz for the updates in this version.
+- Fixed the detection of the version of the TOhtml plugin.
+
+1.3.1 (2011-07-23)
+
+Thanks to Benjamin Fritz for the updates in this version.
+- Fixed the plugin behavior when reloading a file with different settings.
+
+1.3 (2011-04-22)
+Thanks to Benjamin Fritz for the updates in this version.
+- Added support for HTML version 5 encoding detection.
+- The script now dies gracefully in old Vims.
+- 'g:autofenc_autodetect_comment_num_of_lines' renamed to
+  'g:autofenc_autodetect_num_of_lines'
+
+1.2.1 (2011-04-13)
+
+- Fixed a typo in a variable name (this resulted in an error in some
+  occasions). Thanks to Charles Lee for pointing this bug out.
+
+1.2 (2011-03-31)
+
+Thanks to Benjamin Fritz for the updates in this version.
+- TOhtml's IANA name/Vim encoding conversion functions are now used.
+- Changed BOM detection so it does not duplicate a check Vim already did by
+  default (i.e. default to off if ucs-bom is in the 'fileencodings').
+- Put autocmds in the AutoFenc augroup for easier handling.
+- Made autocmd nested so we don't need to worry about restoring everything that
+  other autocmds may set (e.g. syntax).
+- Jumplist or cursor position during detection are not affected.
+- The g:autofenc_autodetect_num_of_lines option is now used also in
+  HTML/XML/CSS detection routines (previously only used for encoding specified
+  in comments).
+- Improved HTML charset line regex.
+- Added an option (g:autofenc_emit_message) to emit messages about the
+  detected/used encoding upon opening a file.
+
+1.1.1 (2009-10-03)
+
+- Fixed the comment encoding detection function (the encoding was not detected
+  if there were some alphanumeric characters before the "encoding" string, like
+  in "# vim:fileencoding=<encoding-name>").
+
+1.1 (2009-08-16)
+
+- Added three configuration possibilites to disable autodetection for specific
+  files (based on file size, file type and file path). See script description
+  for more info.
+
+1.0.2 (2009-08-11)
+
+- Fixed the XML encoding detection function.
+- Minor code and documentation fixes.
+
+1.0.1 (2009-08-02)
+
+- Encoding autodetection is now performed only if the opened file exists (is
+  stored somewhere). So, for example, the autodetection is now not performed
+  when a new file is opened.
+- Correctly works with .viminfo, where the last cursor position in the file is
+  stored when exiting the file. In the previous version of this script, this
+  information was sometimes ignored and the cursor was initially on the very
+  last line in a file. If the user does not use this .viminfo feature (or he
+  does not use .viminfo at all), then the cursor will be initially placed on
+  the very first line.
+- Fixed the implementation of the function which sets the detected
+  encoding.
+
+1.0 (2009-07-26)
+
+- Initial release version of this script.
