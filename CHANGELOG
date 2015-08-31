@@ -22,11 +22,11 @@ Thanks to Ingo Karkat for the updates in this version.
 
 Thanks to Ingo Karkat for the updates in this version.
 - Improved the detection regexp for comments:
-	- added "fileencoding" and "charset";
-	- demands that there is a whitespace in front of the keyword, so that
-	"daycoding" doesn't match;
-	- g:autofenc_autodetect_commentexpr allows to configure the pattern
-	for comment detection.
+  - added "fileencoding" and "charset";
+  - demands that there is a whitespace in front of the keyword, so that
+    "daycoding" doesn't match;
+  - g:autofenc_autodetect_commentexpr allows to configure the pattern
+    for comment detection.
 - Introduced g:autofenc_enc_blacklist to disable some encodings. For
   example, the enca tool has a tendency to detect plain text files as UTF-7.
   With the blacklist, AutoFenc can be instructed to ignore those encodings.
