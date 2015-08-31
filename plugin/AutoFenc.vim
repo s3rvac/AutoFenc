@@ -63,7 +63,7 @@ call s:CheckAndSetVar('g:autofenc_autodetect_xml_filetypes', '^\(xml\|xquery\|xs
 call s:CheckAndSetVar('g:autofenc_autodetect_css', 1)
 call s:CheckAndSetVar('g:autofenc_autodetect_css_filetypes', '^\(css\|sass\)$')
 call s:CheckAndSetVar('g:autofenc_autodetect_comment', 1)
-call s:CheckAndSetVar('g:autofenc_autodetect_commentexpr', '\c^\A\(.*\s\)\?\(\(\(file\)\?en\)\?coding\|charset\)[:=]\?\s*\zs[-A-Za-z0-9_]\+')
+call s:CheckAndSetVar('g:autofenc_autodetect_commentexpr', '\c^.*\<\(\(\(file\)\?en\)\?coding\|charset\)\s*[:=]\?\s*\<\zs[-A-Za-z0-9_]\+')
 call s:CheckAndSetVar('g:autofenc_autodetect_num_of_lines', 5)
 call s:CheckAndSetVar('g:autofenc_autodetect_ext_prog', 1)
 call s:CheckAndSetVar('g:autofenc_ext_prog_path', 'enca')
@@ -288,7 +288,7 @@ endfunction
 " is returned.
 "
 " The default format of the comment that specifies encoding is some
-" non-alphabetic characters at the beginning of the line, then 'charset'
+" optional characters at the beginning of the line, then 'charset'
 " or '[[file]en]coding' (without quotes, case insensitive), which is followed
 " by optional ':' or '=' (and whitespace) and the name of the encoding.
 "-------------------------------------------------------------------------------

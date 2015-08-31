@@ -1,6 +1,10 @@
 1.5.2-dev
 
--
+- Improved the detection regexp for comments:
+  - the comment no longer needs to begin with a non-alphabetic character, which
+    is needed for some file types, such as dosbatch (issue #2);
+  - there has to be ':', '=', or space before the name of the encoding, so e.g.
+    'encodinglatin2' is no longer valid.
 
 1.5.1 (2014-05-03)
 
