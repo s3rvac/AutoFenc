@@ -1,4 +1,4 @@
-1.5.2-dev
+1.6-dev
 
 - Improved the detection regexp for comments:
   - the comment no longer needs to begin with a non-alphabetic character, which
