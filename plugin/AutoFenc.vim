@@ -290,7 +290,7 @@ endfunction
 " The default format of the comment that specifies encoding is some
 " non-alphabetic characters at the beginning of the line, then 'charset'
 " or '[[file]en]coding' (without quotes, case insensitive), which is followed
-" by optional ':' (and whitespace) and the name of the encoding.
+" by optional ':' or '=' (and whitespace) and the name of the encoding.
 "-------------------------------------------------------------------------------
 function s:CommentEncodingDetection()
 	" Get first and last X lines from the file (according to the
