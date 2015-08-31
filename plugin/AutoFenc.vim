@@ -1,7 +1,7 @@
 " File:    AutoFenc.vim
 " Brief:   Tries to automatically detect file encoding.
 " Author:  Petr Zemek <s3rvac@gmail.com>
-" Version: 1.5.1
+" Version: 1.5.2-dev
 "
 " Description:
 "   A Vim plugin that tries to automatically detect and set file encoding when
@@ -30,7 +30,7 @@ if exists('autofenc_loaded') || v:version < 700
 	finish
 endif
 " Make the loaded variable actually useful by including the version number.
-let autofenc_loaded = '1.5.1'
+let autofenc_loaded = '1.5.2-dev'
 
 " This plugin uses line continuations.
 if &cpo =~ 'C'
