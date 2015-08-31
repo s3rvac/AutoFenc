@@ -133,7 +133,7 @@ The plugin has the following configuration options. You can set them in your
   supplied by this plugin). The output of the program has to be the name of the
   encoding in which the file is saved (a string on a single line).
 
-- `g:autofenc_ext_prog_args` (string, default `'-i -L czech'`)
+- `g:autofenc_ext_prog_args` (string, default `'-i'`)
 
   Additional program arguments (can be none, i.e. `''`).
 

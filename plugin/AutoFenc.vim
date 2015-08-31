@@ -67,7 +67,7 @@ call s:CheckAndSetVar('g:autofenc_autodetect_commentexpr', '\c^.*\<\(\(\(file\)\
 call s:CheckAndSetVar('g:autofenc_autodetect_num_of_lines', 5)
 call s:CheckAndSetVar('g:autofenc_autodetect_ext_prog', 1)
 call s:CheckAndSetVar('g:autofenc_ext_prog_path', 'enca')
-call s:CheckAndSetVar('g:autofenc_ext_prog_args', '-i -L czech')
+call s:CheckAndSetVar('g:autofenc_ext_prog_args', '-i')
 call s:CheckAndSetVar('g:autofenc_ext_prog_unknown_fenc', '???')
 call s:CheckAndSetVar('g:autofenc_enc_blacklist', '')
 
