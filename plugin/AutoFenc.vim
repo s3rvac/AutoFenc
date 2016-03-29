@@ -8,7 +8,7 @@
 "   opening a file. See https://github.com/s3rvac/AutoFenc for more details.
 "
 " License:
-"   Copyright (C) 2009-2015 Petr Zemek
+"   Copyright (C) 2009-2016 Petr Zemek
 "
 "   This program is free software: you can redistribute it and/or modify it
 "   under the terms of the GNU General Public License as published by the Free
