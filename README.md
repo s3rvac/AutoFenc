@@ -147,13 +147,6 @@ The plugin has the following configuration options. You can set them in your
 
   If the detected encoding matches this regular expression, it will be ignored.
 
-Requirements
-------------
-
-The `filetype` plugin has to be be enabled (a line like `filetype plugin on`
-has to be in your `$HOME/.vimrc` (Linux-like systems) or `%UserProfile%\_vimrc`
-(Windows systems).
-
 Notes
 -----
 
