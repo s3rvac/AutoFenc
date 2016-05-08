@@ -43,7 +43,7 @@ endif
 "-------------------------------------------------------------------------------
 function s:CheckAndSetVar(var, value)
 	if !exists(a:var)
-		exec 'let ' . a:var . ' = ' . string(a:value)
+		exec 'let '.a:var.' = '.string(a:value)
 	endif
 endfunction
 
