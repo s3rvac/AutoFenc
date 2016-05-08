@@ -5,7 +5,7 @@
     is needed for some file types, such as dosbatch (issue #2);
   - there has to be ':', '=', or space before the name of the encoding, so e.g.
     'encodinglatin2' is no longer valid.
-- Drop the '-L czech' parameter for enca in g:autofenc_ext_prog_args (this
+- Dropped the '-L czech' parameter for enca in g:autofenc_ext_prog_args (this
   setting is specific for the Czech language and thus not suitable as the
   default one).
 
