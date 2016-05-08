@@ -100,7 +100,7 @@ Thanks to Benjamin Fritz for the updates in this version.
   HTML/XML/CSS detection routines (previously only used for encoding specified
   in comments).
 - Improved HTML charset line regex.
-- Added an option (g:autofenc_emit_message) to emit messages about the
+- Added an option (g:autofenc_emit_messages) to emit messages about the
   detected/used encoding upon opening a file.
 
 1.1.1 (2009-10-03)
