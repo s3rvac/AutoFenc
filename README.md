@@ -52,7 +52,8 @@ The plugin has the following configuration options. You can set them in your
 
 - `g:autofenc_emit_messages` (0 or 1, default 0)
 
-  Emits messages about the detected/used encoding upon opening a file.
+  Emits messages about the detected/used encoding or warnings upon opening a
+  file.
 
 - `g:autofenc_max_file_size` (number >= 0, default 10485760)
 

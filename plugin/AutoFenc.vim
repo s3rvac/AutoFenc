@@ -349,6 +349,9 @@ function s:ExtProgEncodingDetection()
 	endif
 
 	if !executable(g:autofenc_ext_prog_path)
+		if g:autofenc_emit_messages
+			echomsg "AutoFenc: External program `".g:autofenc_ext_prog_path."` is not executable -> skipping"
+		endif
 		return ''
 	endif
 
@@ -363,6 +366,9 @@ function s:ExtProgEncodingDetection()
 	let enc = system(ext_prog_cmd)
 	if v:shell_error != 0
 		" An error occurred.
+		if g:autofenc_emit_messages
+			echomsg "AutoFenc: Command `".ext_prog_cmd."` failed with error code ".v:shell_error." -> skipping"
+		endif
 		return ''
 	endif
 
