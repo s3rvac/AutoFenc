@@ -10,8 +10,8 @@ Changelog
   * there has to be `':'`, `'='`, or space before the name of the encoding, so
     e.g. `'encodinglatin2'` is no longer valid.
 * Add emission of warning messages when the external program is not executable
-  or its execution failed. As usual, these messages are emitted only when
-  `g:autofenc_emit_messages` is set.
+  or its execution failed (issue #3). As usual, these messages are emitted only
+  when `g:autofenc_emit_messages` is set.
 * Dropped the `'-L czech'` parameter for `enca` in `g:autofenc_ext_prog_args`
   (this setting is specific for the Czech language and thus not suitable as the
   default one).
