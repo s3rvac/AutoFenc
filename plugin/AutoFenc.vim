@@ -343,29 +343,36 @@ endfunction
 " string. Otherwise, the detected encoding is returned.
 "-------------------------------------------------------------------------------
 function s:ExtProgEncodingDetection()
-	if executable(g:autofenc_ext_prog_path)
-		" Get full path of the currently edited file.
-		let file_path = expand('%:p')
+	if g:autofenc_ext_prog_path == ''
+		" No external program is set.
+		return ''
+	endif
 
-		" Create the complete external program command by appending program
-		" arguments and the current file path to the external program.
-		let ext_prog_cmd = g:autofenc_ext_prog_path.' '.g:autofenc_ext_prog_args.' '.s:SafeShellescape(file_path)
+	if !executable(g:autofenc_ext_prog_path)
+		return ''
+	endif
 
-		" Run it to get the encoding.
-		let enc = system(ext_prog_cmd)
-		if v:shell_error != 0
-			" An error occurred.
-			return ''
-		endif
+	" Get full path of the currently edited file.
+	let file_path = expand('%:p')
 
-		" Remove trailing newline from the output (system() removes any \r from
-		" the result automatically).
-		let enc = substitute(enc, '\n', '', '')
+	" Create the complete external program command by appending program
+	" arguments and the current file path to the external program.
+	let ext_prog_cmd = g:autofenc_ext_prog_path.' '.g:autofenc_ext_prog_args.' '.s:SafeShellescape(file_path)
 
-		if enc != g:autofenc_ext_prog_unknown_fenc
-			" The encoding was (probably) detected successfully.
-			return enc
-		endif
+	" Run it to get the encoding.
+	let enc = system(ext_prog_cmd)
+	if v:shell_error != 0
+		" An error occurred.
+		return ''
+	endif
+
+	" Remove trailing newline from the output (system() removes any \r from
+	" the result automatically).
+	let enc = substitute(enc, '\n', '', '')
+
+	if enc != g:autofenc_ext_prog_unknown_fenc
+		" The encoding was (probably) detected successfully.
+		return enc
 	endif
 
 	return ''
