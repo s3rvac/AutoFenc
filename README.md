@@ -173,7 +173,7 @@ Let me know if there are others and I will add them here.
 License
 -------
 
-Copyright (c) 2009-2016 Petr Zemek <s3rvac@gmail.com>
+Copyright (c) 2009-2016 Petr Zemek <s3rvac@petrzemek.net>
 
 Distributed under GNU GPLv2:
 

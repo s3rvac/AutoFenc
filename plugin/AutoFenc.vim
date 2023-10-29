@@ -1,6 +1,6 @@
 " File:    AutoFenc.vim
 " Brief:   Tries to automatically detect file encoding.
-" Author:  Petr Zemek <s3rvac@gmail.com>
+" Author:  Petr Zemek <s3rvac@petrzemek.net>
 " Version: 1.6-dev
 "
 " Description:
